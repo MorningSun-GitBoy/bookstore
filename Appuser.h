@@ -15,17 +15,16 @@ private:
       */
      string key;
      bool status;
-protected:
+protected://该权限对象无法在外部函数中指针或对象调用
       /*
        数据：
        name -- 用户名
        userID -- 用户唯一标识号
-       address -- 用户地址，应用“组”存储，设置上限
        len -- 存储user中地址的条数
        方法：
        getkey() -- 从数据库中读取密码，用于登陆验证
       */
-     string name,add[LONG];
+     string name;
      int userID,len;
 public:
       user(){
@@ -38,22 +37,23 @@ public:
       void setID(int ID){
             userID = ID;
       }
-      void addAddress(address a){
-            add[len] = a;
-            len++;
-      }
 };
 class buyer : protected user{
 private:
 protected:
-      double pay; //购买书的金额
+      /*
+        add[] -- 买家地址，应用“组”存储，设置上限
+        pay -- 购买书的金额
+      */
+      double pay;
+      address add[LONG];
 public:
       buyer();
-      buyer(user User){
-            name = User.name;
-            userID = User.userID;
-            for(int i=0;i<=len;i++)
-                  add[i] = User.add[len];
+      buyer(string Name,int ID,int l,address addr[]){
+            name = Name;
+            userID = ID;
+            for(int i=0;i<=l;i++)
+                  add[i] = addr[i];
       }
       ~buyer();
       int getID(){
@@ -62,20 +62,43 @@ public:
       string getBuyerName(){
             return name;
       }
+      void addAddress(address a){
+            add[len] = a;
+            len++;
+      }
 };
 class address{
 private:
-      /* 数据 */
-protected:
       /*
       数据
       */
+protected:
+     /* 数据：
+            五个地址等级，对应“省市区街道和具体位置”
+            level1 -- 具体位置
+            level2 -- 街道
+            level3 -- 区
+            level4 -- 市
+            level5 -- 省
+      */
+     string level1,level2,level3,level4,level5;
 public:
       /* 
-       重写“=”运算符
+       重写“=”运算符,没有必要，C++中允许对象之间的赋值
+       printAddress() -- 返回整个string地址
+       setLevles() -- 利用swich来设置各级别的数据
+       getLevels() -- 利用swich来返回任意级别地址
       */
-     address operator=(address a,address b){//重写赋值运算符
-            //a.~=b.~;等写完了数据再写
-            return address a;
+     void setLevles(){
+
+     }
+     string getLevels(){
+           string level;
+           return level;
+     }
+     string printAddress(){
+           string Address;
+           Address = level5+level4+level3+level2+level1;
+           return Address;
      }
 }
