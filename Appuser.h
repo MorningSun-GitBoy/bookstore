@@ -20,16 +20,21 @@ protected://该权限对象无法在外部函数中指针或对象调用
        数据：
        name -- 用户名
        userID -- 用户唯一标识号
-       len -- 存储user中地址的条数
        方法：
        getkey() -- 从数据库中读取密码，用于登陆验证
       */
      string name;
-     int userID,len;
+     int userID;
+     void getkey(string k){
+           key = k;
+     }
 public:
-      user(){
-            len = 0;
-      }
+      /*
+       方法：
+       setName() -- 为name赋值
+       setID() -- 为userID赋值
+      */
+      user();
       ~user();
       void setName(string name){
             user::name = name;
@@ -42,16 +47,26 @@ class buyer : protected user{
 private:
 protected:
       /*
+        数据：
         add[] -- 买家地址，应用“组”存储，设置上限
+        len -- 存储user中地址的条数
         pay -- 购买书的金额
       */
       double pay;
+      int len;
       address add[LONG];
 public:
+      /*
+       方法：
+       getID() -- 返回用户的ID
+       getBuyerName() -- 返回用户名
+       addAddress() -- 将参数加入到“地址类”组中
+      */
       buyer();
       buyer(string Name,int ID,int l,address addr[]){
             name = Name;
             userID = ID;
+            len = l;
             for(int i=0;i<=l;i++)
                   add[i] = addr[i];
       }
@@ -69,9 +84,6 @@ public:
 };
 class address{
 private:
-      /*
-      数据
-      */
 protected:
      /* 数据：
             五个地址等级，对应“省市区街道和具体位置”
@@ -84,6 +96,7 @@ protected:
      string level1,level2,level3,level4,level5;
 public:
       /* 
+       方法：
        重写“=”运算符,没有必要，C++中允许对象之间的赋值
        printAddress() -- 返回整个string地址
        setLevles() -- 利用swich来设置各级别的数据
