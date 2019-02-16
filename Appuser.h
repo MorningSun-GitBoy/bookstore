@@ -33,6 +33,8 @@ public:
        方法：
        setName() -- 为name赋值
        setID() -- 为userID赋值
+       getID() -- 返回用户的ID
+       getName() -- 返回用户名
       */
       user();
       ~user();
@@ -41,6 +43,12 @@ public:
       }
       void setID(int ID){
             userID = ID;
+      }
+      int getID(){
+            return userID;
+      }
+      string getName(){
+            return name;
       }
 };
 class buyer : protected user{
@@ -58,9 +66,8 @@ protected:
 public:
       /*
        方法：
-       getID() -- 返回用户的ID
-       getBuyerName() -- 返回用户名
        addAddress() -- 将参数加入到“地址类”组中
+       setPay() -- 设置金额
       */
       buyer();
       buyer(string Name,int ID,int l,address addr[]){
@@ -71,15 +78,12 @@ public:
                   add[i] = addr[i];
       }
       ~buyer();
-      int getID(){
-            return userID;
-      }
-      string getBuyerName(){
-            return name;
-      }
       void addAddress(address a){
             add[len] = a;
             len++;
+      }
+      void setPay(double p){
+
       }
 };
 class address{

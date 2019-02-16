@@ -2,6 +2,7 @@
  类名：
       book -- 书本类，存储书本信息
 */
+#include <iostream>
 #include <string>
 using namespace std;//必须有“namespace”才能使程序正常运行
 class book{
@@ -23,15 +24,32 @@ protected:
        getID() -- 
        getBookName() -- 
        getAuthor() -- 
-       getoublishing() -- 
+       getPublishing() -- 
        getprice() -- 
       */
      book();
      ~book();
-     void dispaly(){}
-     string getID(){}
-     string getBookName(){}
-     string getAuthor(){}
-     string getoublishing(){}
-     double getprice(){}
+     void dispaly(){//输出各种参数
+           cout<<"书号："<<bookID<<"\t";
+           cout<<"书名："<<bookName<<"\t";
+           cout<<"作者："<<author<<"\t";
+           cout<<"出版社："<<publishing<<"\t";
+           cout<<"定价："<<price<<"\t";
+           //在最终版本中可能会删掉或者改用其他输出手段
+     }
+     string getID(){
+           return bookID;
+     }
+     string getBookName(){
+           return bookName;
+     }
+     string getAuthor(){
+           return author;
+     }
+     string getPublishing(){
+           return publishing;
+     }
+     double getPrice(){
+           return price;
+     }
 }
