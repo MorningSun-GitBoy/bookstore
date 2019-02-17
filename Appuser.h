@@ -35,6 +35,7 @@ public:
        setID() -- 为userID赋值
        getID() -- 返回用户的ID
        getName() -- 返回用户名
+       collateKey() -- 返回用户密码是否正确
       */
       user();
       ~user();
@@ -51,7 +52,12 @@ public:
             return name;
       }
 };
-class buyer : protected user{
+class buyer : public user{
+      /*关于派生：
+       public--派生类内部可以访问基类的protected和public属性的成员；派生类对象只能访问基类public属性的成员。
+       protected--派生类内部可以访问基类的protected和public属性的成员；派生类对象无法访问基类任何成员；派生类子类内部对基类的访问权限同它的父类。
+       private--派生类类内部可以访问基类的protected和public属性的成员；而派生类对象无法访问基类任何成员；派生类子类内部无法访问基类的任何成员
+      */
 private:
 protected:
       /*
@@ -68,6 +74,8 @@ public:
        方法：
        addAddress() -- 将参数加入到“地址类”组中
        setPay() -- 设置金额
+       getPay() -- 返回金额
+       choseAddress -- 返回地址类
       */
       buyer();
       buyer(string Name,int ID,int l,address addr[]){
@@ -83,7 +91,7 @@ public:
             len++;
       }
       void setPay(double p){
-
+            pay = p;
       }
 };
 class address{
