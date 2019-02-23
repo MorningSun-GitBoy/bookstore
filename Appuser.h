@@ -64,9 +64,10 @@ protected:
         数据：
         add[] -- 买家地址，应用“组”存储，设置上限
         len -- 存储user中地址的条数
+        off -- 存储买家应有的折扣(用以代替原码中的buyer派生类)
         pay -- 购买书的金额
       */
-      double pay;
+      double pay,off;
       int len;
       address add[LONG];
 public:
@@ -91,7 +92,7 @@ public:
             len++;
       }
       void setPay(double p){
-            pay = p;
+            pay = p*(1-off);
       }
 };
 class address{
