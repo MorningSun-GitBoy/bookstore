@@ -142,7 +142,7 @@ public:
             cout<<"购书人："<<name<<"\t";
             cout<<"编号："<<userID<<"\t";
             cout<<"会员级别："<<leager_grade<<"\n";
-            cout<<"地址："<<getAddress(1).printAddress()<<"\n"
+            cout<<"地址："<<getAddress(1).printAddress()<<"\n";
       }
       void setpay(double p){
             if(leager_grade==1)
