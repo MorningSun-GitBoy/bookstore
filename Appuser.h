@@ -131,10 +131,15 @@ public:
            return Address;
      }
 };
-class menber : public buyer{
-      int leager_grade;
+/*
+ member,honoured_guest,layfolk为buyer派生的子类
+ 用于分类计算购书人的折扣和最终消费
+ 每个类都会有一个或0个特征变量
+*/
+class member : public buyer{
+      int leager_grade;//表示会员等级
 public:
-      menber(string Name,int ID,int l,address addr[],double p,int i)
+      member(string Name,int ID,int l,address addr[],double p,int i)
        : buyer(string Name,int ID,int l,address addr[],double p){
              leager_grade = i;
       }
@@ -159,20 +164,33 @@ public:
       }
 };
 class honoured_guest : public buyer{
-      double discount_rate;
+      double discount_rate;//用以表示贵宾的折扣（0-1之间的小数）
 public:
-      honoured_guest(string Name,int ID,int l,address addr[],double p,double r)
+      honoured_guest(string Name,int ID,int l,address addr[],double p,double r=0.5)
        : buyer(string Name,int ID,int l,address addr[],double p){
              discount_rate = r;
        }
-      void display();
-      void setpay();
+      void display(){
+            cout<<"购书人："<<name<<"\t";
+            cout<<"编号："<<userID;
+            cout<<"贵宾折扣："<<discount_rate*100<<"%\n";
+            cout<<"地址："<<getAddress(1).printAddress()<<"\n";
+      }
+      void setpay(double p){
+            pay = pay+(1-discount_rate)*p;
+      }
 };
 class layfolk : public buyer{
 public:
       layfolk(string Name,int ID,int l,address addr[],double p)
        : buyer(string Name,int ID,int l,address addr[],double p){
        }
-      void display();
-      void setpay(double p);
+      void display(){
+            cout<<"购书人："<<name<<"\t";
+            cout<<"编号："<<userID<<"\t";
+            cout<<"地址："<<getAddress(1).printAddress()<<"\n";
+      }
+      void setpay(double p){
+            pay = pay+p;
+      }
 }
