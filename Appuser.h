@@ -5,6 +5,7 @@
       buyer -- 消费者类，用于购物结算
 */
 #include <string>
+#include <iostream>
 #define LONG 10 //用户可添加并使用的地址条数
 using namespace std;//这句话似乎没用
 class user{
@@ -137,8 +138,25 @@ public:
        : buyer(string Name,int ID,int l,address addr[],double p){
              leager_grade = i;
       }
-      void display();
-      void setpay();
+      void display(){
+            cout<<"购书人："<<name<<"\t";
+            cout<<"编号："<<userID<<"\t";
+            cout<<"会员级别："<<leager_grade<<"\n";
+            cout<<"地址："<<getAddress(1).printAddress()<<"\n"
+      }
+      void setpay(double p){
+            if(leager_grade==1)
+                  pay = 0.95*p+pay;
+            else if(leager_grade==2)
+                  pay = 0.90*p+pay;
+            else if(leager_grade==3)
+                  pay = 0.85*p+pay;
+            else if(leager_grade==4)
+                  pay = 0.80*p+pay;
+            else if(leager_grade==5)
+                  pay = 0.7*p+pay;
+            else cout<<"级别错误！";
+      }
 };
 class honoured_guest : public buyer{
       double discount_rate;
@@ -156,5 +174,5 @@ public:
        : buyer(string Name,int ID,int l,address addr[],double p){
        }
       void display();
-      void setpay(dpuble p);
+      void setpay(double p);
 }
