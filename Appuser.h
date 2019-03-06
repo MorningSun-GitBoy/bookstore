@@ -133,10 +133,28 @@ public:
 class menber : public buyer{
       int leager_grade;
 public:
-      menber(string Name,int ID,int l,address addr[],double p)
+      menber(string Name,int ID,int l,address addr[],double p,int i)
        : buyer(string Name,int ID,int l,address addr[],double p){
-             leager_grade = 1;
+             leager_grade = i;
       }
       void display();
       void setpay();
+};
+class honoured_guest : public buyer{
+      double discount_rate;
+public:
+      honoured_guest(string Name,int ID,int l,address addr[],double p,double r)
+       : buyer(string Name,int ID,int l,address addr[],double p){
+             discount_rate = r;
+       }
+      void display();
+      void setpay();
+};
+class layfolk : public buyer{
+public:
+      layfolk(string Name,int ID,int l,address addr[],double p)
+       : buyer(string Name,int ID,int l,address addr[],double p){
+       }
+      void display();
+      void setpay(dpuble p);
 }
