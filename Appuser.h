@@ -73,12 +73,13 @@ public:
       /*
        方法：
        addAddress() -- 将参数加入到“地址类”组中
+       getAddress() -- 返回地址对象
        setPay() -- 设置金额
        getPay() -- 返回金额
        choseAddress -- 返回地址类
       */
       buyer();
-      buyer(string Name,int ID,int l,address addr[]){
+      buyer(string Name,int ID,int l,address addr[],double p){
             name = Name;
             userID = ID;
             len = l;
@@ -90,9 +91,11 @@ public:
             add[len] = a;
             len++;
       }
-      void setPay(double p){
-            pay = p;
+      address getAddress(int i){
+            return add[i];
       }
+      virtual void dispaly()=0;
+      virtual void setPay(double p=0)=0;
 };
 class address{
 private:
@@ -126,4 +129,14 @@ public:
            Address = level5+level4+level3+level2+level1;
            return Address;
      }
+};
+class menber : public buyer{
+      int leager_grade;
+public:
+      menber(string Name,int ID,int l,address addr[],double p)
+       : buyer(string Name,int ID,int l,address addr[],double p){
+             leager_grade = 1;
+      }
+      void display();
+      void setpay();
 }
