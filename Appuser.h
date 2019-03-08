@@ -150,7 +150,7 @@ public:
             cout<<"会员级别："<<leager_grade<<"\n";
             cout<<"地址："<<getAddress(1).printAddress()<<"\n";
       }
-      void setpay(double p){
+      void setpay(double p=0){
             if(leager_grade==1)
                   pay = 0.95*p+pay;
             else if(leager_grade==2)
@@ -177,7 +177,7 @@ public:
             cout<<"贵宾折扣："<<discount_rate*100<<"%\n";
             cout<<"地址："<<getAddress(1).printAddress()<<"\n";
       }
-      void setpay(double p){
+      void setpay(double p=0){
             pay = pay+(1-discount_rate)*p;
       }
 };
@@ -191,7 +191,7 @@ public:
             cout<<"编号："<<userID<<"\t";
             cout<<"地址："<<getAddress(1).printAddress()<<"\n";
       }
-      void setpay(double p){
+      void setpay(double p=0){
             pay = pay+p;
       }
 }
