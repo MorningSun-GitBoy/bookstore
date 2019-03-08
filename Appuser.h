@@ -99,7 +99,7 @@ public:
       /*
        virtual void dispaly()=0;
        virtual void setPay(double p=0)=0;
-       如之前的问题只好先注释掉了
+       //如之前的问题只好先注释掉了
       */
 };
 class address{
@@ -122,6 +122,15 @@ public:
        setLevles() -- 利用swich来设置各级别的数据
        getLevels() -- 利用swich来返回任意级别地址
       */
+     address();
+     address(string l){//为配合最初的代码设定
+           level1=l;
+           level2="";
+           level3="";
+           level4="";
+           level5="";
+     }
+     ~address();
      void setLevles(){
 
      }
