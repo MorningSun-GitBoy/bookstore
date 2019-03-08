@@ -4,7 +4,7 @@
       address -- 地址存储类，按地域的级别进行分类
       buyer -- 消费者类，用于购物结算
 */
-#include <string>
+#include <string>//好神奇
 #include <iostream>
 #define LONG 10 //用户可添加并使用的地址条数
 using namespace std;//这句话似乎没用
@@ -96,8 +96,11 @@ public:
       address getAddress(int i){
             return add[i];
       }
-      virtual void dispaly()=0;
-      virtual void setPay(double p=0)=0;
+      /*
+       virtual void dispaly()=0;
+       virtual void setPay(double p=0)=0;
+       如之前的问题只好先注释掉了
+      */
 };
 class address{
 private:
