@@ -53,55 +53,6 @@ public:
             return name;
       }
 };
-class buyer : public user{
-      /*关于派生：
-       public--派生类内部可以访问基类的protected和public属性的成员；派生类对象只能访问基类public属性的成员。
-       protected--派生类内部可以访问基类的protected和public属性的成员；派生类对象无法访问基类任何成员；派生类子类内部对基类的访问权限同它的父类。
-       private--派生类类内部可以访问基类的protected和public属性的成员；而派生类对象无法访问基类任何成员；派生类子类内部无法访问基类的任何成员
-      */
-private:
-protected:
-      /*
-        数据：
-        add[] -- 买家地址，应用“组”存储，设置上限
-        len -- 存储user中地址的条数
-        pay -- 购买书的金额
-      */
-      double pay;
-      int len;
-      address add[LONG];
-public:
-      /*
-       方法：
-       addAddress() -- 将参数加入到“地址类”组中
-       getAddress() -- 返回地址对象
-       setPay() -- 设置金额
-       getPay() -- 返回金额
-       choseAddress -- 返回地址类
-      */
-      buyer();
-      buyer(string Name,int ID,int l,address addr[],double p=0){
-            name = Name;
-            userID = ID;
-            len = l;
-            for(int i=0;i<=l;i++)
-                  add[i] = addr[i];
-            pay = p;
-      }
-      ~buyer();
-      void addAddress(address a){
-            add[len] = a;
-            len++;
-      }
-      address getAddress(int i){
-            return add[i];
-      }
-      /*
-       virtual void dispaly()=0;
-       virtual void setPay(double p=0)=0;
-       //如之前的问题只好先注释掉了
-      */
-};
 class address{
 private:
 protected:
@@ -143,6 +94,57 @@ public:
            Address = level5+level4+level3+level2+level1;
            return Address;
      }
+};
+class buyer : public user{
+      /*关于派生：
+       public--派生类内部可以访问基类的protected和public属性的成员；派生类对象只能访问基类public属性的成员。
+       protected--派生类内部可以访问基类的protected和public属性的成员；派生类对象无法访问基类任何成员；派生类子类内部对基类的访问权限同它的父类。
+       private--派生类类内部可以访问基类的protected和public属性的成员；而派生类对象无法访问基类任何成员；派生类子类内部无法访问基类的任何成员
+      */
+private:
+protected:
+      /*
+        数据：
+        len -- 存储user中地址的条数
+        pay -- 购买书的金额
+      */
+      double pay;
+      int len;
+      
+public:
+      /*
+       数据：
+       add[] -- 买家地址，应用“组”存储，设置上限//由于子类无法访问父类protected成员
+       方法：
+       addAddress() -- 将参数加入到“地址类”组中
+       getAddress() -- 返回地址对象
+       setPay() -- 设置金额
+       getPay() -- 返回金额
+       choseAddress -- 返回地址类
+      */
+      address add[LONG];
+      buyer();
+      buyer(string Name,int ID,int l,address addr[],double p=0){
+            name = Name;
+            userID = ID;
+            len = l;
+            for(int i=0;i<=l;i++)
+                  add[i] = addr[i];
+            pay = p;
+      }
+      ~buyer();
+      void addAddress(address a){
+            add[len] = a;
+            len++;
+      }
+      address getAddress(int i){
+            return add[i];
+      }
+      /*
+       virtual void dispaly()=0;
+       virtual void setPay(double p=0)=0;
+       //如之前的问题只好先注释掉了
+      */
 };
 /*
  member,honoured_guest,layfolk为buyer派生的子类
@@ -206,4 +208,4 @@ public:
       void setpay(double p=0){
             pay = pay+p;
       }
-}
+};
