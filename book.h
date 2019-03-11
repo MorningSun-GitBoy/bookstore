@@ -28,6 +28,13 @@ protected:
        getprice() -- 
       */
      book();
+     book(string ID,string name,string au,string pu,double p){
+           bookID = ID;
+           bookName = name;
+           author = au;
+           publishing = pu;
+           price = p;
+     }
      ~book();
      void dispaly(){//输出各种参数
            cout<<"书号："<<bookID<<"\t";

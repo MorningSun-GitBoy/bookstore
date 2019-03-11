@@ -94,6 +94,9 @@ public:
       void setPay(double p){
             pay = p*(1-off);
       }
+      double getPay(){
+            return pay;
+      }
 };
 class address{
 private:
