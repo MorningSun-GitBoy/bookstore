@@ -124,7 +124,7 @@ public:
       */
       address add[LONG];
       buyer();
-      buyer(string Name,int ID,int l,address addr[],double p=0){
+      buyer(string Name,int ID,int l,address *addr,double p=0){
             name = Name;
             userID = ID;
             len = l;
@@ -154,7 +154,7 @@ public:
 class member : public buyer{
       int leager_grade;//表示会员等级
 public:
-      member(string Name,int ID,int l,address addr[],double p,int i)
+      member(string Name,int ID,int l,address *addr,double p,int i)
        : buyer(Name,ID,l,addr,p){//父类参数列表不需要写参数的类型，只要与父类中参数名一致即可
              leager_grade = i;
       }
@@ -181,7 +181,7 @@ public:
 class honoured_guest : public buyer{
       double discount_rate;//用以表示贵宾的折扣（0-1之间的小数）
 public:
-      honoured_guest(string Name,int ID,int l,address addr[],double p,double r=0.5)
+      honoured_guest(string Name,int ID,int l,address *addr,double p,double r=0.5)
        : buyer(Name,ID,l,addr,p){
              discount_rate = r;
        }
@@ -197,7 +197,7 @@ public:
 };
 class layfolk : public buyer{
 public:
-      layfolk(string Name,int ID,int l,address addr[],double p)
+      layfolk(string Name,int ID,int l,address *addr,double p)
        : buyer(Name,ID,l,addr,p){
        }
       void display(){
