@@ -3,4 +3,9 @@ This project aim to imitate some codes from one book,and I will complete it and 
 I will descripe code in both English and Chinese when update.My annotation wil wirte in detail.
 If you have any questions ,please find annotations or "updateLOG.md".
 
-±¾ÏîÄ¿ÒâÔÚÄ£·Â¿Î±¾ÖĞµÄÏîÄ¿´úÂë£¬Íê³É²¢À©Õ¹ËüµÄ¹¦ÄÜ¡£¸üĞÂÊ±»á²ÉÓÃººÓ¢Ë«ÓïÎÄµµ¡£ÎÒµÄ×¢ÊÍ»áÊ®·ÖÏê¾¡£¬ÈÎºÎÎÊÌâÇë²éÕÒ×¢ÊÍ»òÒÆ²½¡°updateLOG.md¡±¡£
+æœ¬é¡¹ç›®æ„åœ¨æ¨¡ä»¿è¯¾æœ¬ä¸­çš„é¡¹ç›®ä»£ç ï¼Œå®Œæˆå¹¶æ‰©å±•å®ƒçš„åŠŸèƒ½ã€‚æ›´æ–°æ—¶ä¼šé‡‡ç”¨æ±‰è‹±åŒè¯­æ–‡æ¡£ã€‚æˆ‘çš„æ³¨é‡Šä¼šååˆ†è¯¦å°½ï¼Œä»»ä½•é—®é¢˜è¯·æŸ¥æ‰¾æ³¨é‡Šæˆ–ç§»æ­¥â€œupdateLOG.mdâ€ã€‚
+
+### Complaints
+Almost half a month,the source code have not been complete.When I debug,it was always in trouble.
+
+å¤§æ¦‚åŠä¸ªæœˆè¿‡å»äº†ï¼Œæºä»£ç ä¾æ—§æ²¡æœ‰å®Œæˆã€‚æˆ‘ä¸€è°ƒè¯•ï¼Œå°±å‡ºé—®é¢˜ã€‚
