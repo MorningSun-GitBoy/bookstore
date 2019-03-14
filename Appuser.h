@@ -79,12 +79,13 @@ public:
        choseAddress -- ∑µªÿµÿ÷∑¿‡
       */
       buyer();
-      buyer(string Name,int ID,int l,address addr[]){
+      buyer(string Name,int ID,int l,address *addr[],double p=0){
             name = Name;
             userID = ID;
             len = l;
             for(int i=0;i<=l;i++)
-                  add[i] = addr[i];
+                  add[i] = *addr[i];
+            pay = p;
       }
       ~buyer();
       void addAddress(address a){
