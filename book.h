@@ -59,4 +59,4 @@ protected:
      double getPrice(){
            return price;
      }
-}
+};
