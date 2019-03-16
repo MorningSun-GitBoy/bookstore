@@ -6,7 +6,7 @@
 */
 #include <string>//好神奇
 #include <iostream>
-#define LONG 10 //用户可添加并使用的地址条数
+#define LONG 5 //用户可添加并使用的地址条数
 using namespace std;//这句话似乎没用
 class user{
 private:
@@ -38,8 +38,8 @@ public:
        getName() -- 返回用户名
        collateKey() -- 返回用户密码是否正确
       */
-      user();
-      ~user();
+      user(){}
+      //~user();
       void setName(string name){
             user::name = name;
       }
@@ -73,7 +73,7 @@ public:
        setLevles() -- 利用swich来设置各级别的数据
        getLevels() -- 利用swich来返回任意级别地址
       */
-     address();
+     address(){}
      address(string l){//为配合最初的代码设定
            level1=l;
            level2="";
@@ -81,7 +81,7 @@ public:
            level4="";
            level5="";
      }
-     ~address();
+     //~address();
      void setLevles(){
 
      }
@@ -132,7 +132,7 @@ public:
                   add[i] = *addr[i];
             pay = p;
       }
-      ~buyer();
+      //~buyer();
       void addAddress(address a){
             add[len] = a;
             len++;

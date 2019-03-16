@@ -35,7 +35,7 @@ public:
            publishing = pu;
            price = p;
      }
-     ~book();
+     //~book();
      void dispaly(){//输出各种参数
            cout<<"书号："<<bookID<<"\t";
            cout<<"书名："<<bookName<<"\t";
