@@ -6,5 +6,7 @@ This file is aim to log the update informations including the test and formal ve
 ```
 ### test 0.0.01
 With the efforts I made, the application have been compiled.But I met a great trouble soon,which is called "Segment fault".
+I avoided the errore tips of compiler to complete compiling through making destructor an annotation and using no body and no parameter constructor.Abort Segment fault,perhaps it links with memory and some troubles about null pointer.
 
 经过我的努力，程序终于完成了编译。但是很快就遇到了麻烦，叫做段错误。
+我通过注释析构函数和使用空函数体空参构造函数的方式规避了编译器的报错，完成了编译。而段错误，应该是和文件的内存有关，还有空指针的一些事情。烦。
