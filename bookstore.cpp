@@ -6,9 +6,9 @@ using namespace std;//解决了最疑惑的问题，是我太傻
 int main(){
       int i=0,buyerid,flag;
       book * cbook[2];//指针数组存放book对象地址
-      address * addr[3];//存放address对象地址
       address add1("北京");
       address add2("上海");
+      address * addr[3];//存放address对象地址
       addr[0] = &add1;
       addr[1] = &add2;
       addr[2] = &add1;
