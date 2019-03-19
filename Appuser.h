@@ -73,7 +73,13 @@ public:
        setLevles() -- 利用swich来设置各级别的数据
        getLevels() -- 利用swich来返回任意级别地址
       */
-     address(){}
+     address(){
+           level1="";
+           level2="";
+           level3="";
+           level4="";
+           level5="";
+     }
      address(string l){//为配合最初的代码设定
            level1=l;
            level2="";
