@@ -130,18 +130,23 @@ public:
       */
       address add[LONG];
       buyer();
-      buyer(string Name,int ID,int l,address *addr[],double p=0){
+      buyer(string Name,int ID,int l=0/*方便测试使用默认值*/,double p=0){
             name = Name;
             userID = ID;
             len = l;
-            for(int i=0;i<=l;i++)
-                  add[i] = *addr[i];
+            for(int i=0;i<=l;i++){
+                  address a ;//=
+                  addAddress(a,i);
+            }
             pay = p;
       }
       //~buyer();
       void addAddress(address a){
             add[len] = a;
             len++;
+      }
+      void addAddress(address a,int l){
+            add[l] = a;
       }
       address getAddress(int i){
             return add[i];
@@ -160,8 +165,8 @@ public:
 class member : public buyer{
       int leager_grade;//表示会员等级
 public:
-      member(string Name,int ID,int l,address *addr[],double p,int i)
-       : buyer(Name,ID,l,addr,p){//父类参数列表不需要写参数的类型，只要与父类中参数名一致即可
+      member(string Name,int ID,int l,double p,int i)
+       : buyer(Name,ID,l,p){//父类参数列表不需要写参数的类型，只要与父类中参数名一致即可
              leager_grade = i;
       }
       void display(){
@@ -187,8 +192,8 @@ public:
 class honoured_guest : public buyer{
       double discount_rate;//用以表示贵宾的折扣（0-1之间的小数）
 public:
-      honoured_guest(string Name,int ID,int l,address *addr[],double p,double r=0.5)
-       : buyer(Name,ID,l,addr,p){
+      honoured_guest(string Name,int ID,int l,double p,double r=0.5)
+       : buyer(Name,ID,l,p){
              discount_rate = r;
        }
       void display(){
@@ -203,8 +208,8 @@ public:
 };
 class layfolk : public buyer{
 public:
-      layfolk(string Name,int ID,int l,address *addr[],double p)
-       : buyer(Name,ID,l,addr,p){
+      layfolk(string Name,int ID,int l,double p)
+       : buyer(Name,ID,l,p){
        }
       void display(){
             cout<<"购书人："<<name<<"\t";

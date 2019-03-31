@@ -10,3 +10,9 @@ I avoided the errore tips of compiler to complete compiling through making destr
 
 经过我的努力，程序终于完成了编译。但是很快就遇到了麻烦，叫做段错误。
 我通过注释析构函数和使用空函数体空参构造函数的方式规避了编译器的报错，完成了编译。而段错误，应该是和文件的内存有关，还有空指针的一些事情。烦。
+
+### test 0.0.02
+Knowing the flaut reason,I understand the grammar of C++ more deeply.Because of too many code which need
+to correct,I short so many code and pass the debug.From now on,I make the code on book come ture almostly.
+
+在找到错误后，我终于对C++的语法规则更加熟知了。由于要改的代码太多，我简要地更改了代码，使之可以通过调试。目前来看，我已经把书上上的代码实现了。
