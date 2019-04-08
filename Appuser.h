@@ -39,7 +39,7 @@ public:
        collateKey() -- 返回用户密码是否正确
       */
       user(){}
-      //~user();
+      //~user(){}
       void setName(string name){
             user::name = name;
       }
