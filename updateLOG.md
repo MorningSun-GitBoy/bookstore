@@ -16,3 +16,7 @@ Knowing the flaut reason,I understand the grammar of C++ more deeply.Because of 
 to correct,I short so many code and pass the debug.From now on,I make the code on book come ture almostly.
 
 在找到错误后，我终于对C++的语法规则更加熟知了。由于要改的代码太多，我简要地更改了代码，使之可以通过调试。目前来看，我已经把书上上的代码实现了。
+
+I begain to improve user login fuction.Build up the data floder and manage head file.Repair to update.
+
+我开始改进用户登录功能。建立了数据文件夹和管理头文件。准备开始迭代。

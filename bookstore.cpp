@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Appuser.h"
+#include "AppUser.h"
 #include "book.h"
 using namespace std;//解决了最疑惑的问题，是我太傻
 int main(){
