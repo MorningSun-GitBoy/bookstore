@@ -39,6 +39,10 @@ public:
        collateKey() -- 返回用户密码是否正确
       */
       user(){}
+      user(int id){//以id为变量的构造方法，确定唯一的id与密码
+            string k;
+            getkey(k);
+      }
       //~user(){}
       void setName(string name){
             user::name = name;

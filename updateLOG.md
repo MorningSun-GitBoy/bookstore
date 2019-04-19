@@ -20,3 +20,8 @@ to correct,I short so many code and pass the debug.From now on,I make the code o
 I begain to improve user login fuction.Build up the data floder and manage head file.Repair to update.
 
 我开始改进用户登录功能。建立了数据文件夹和管理头文件。准备开始迭代。
+
+### test 0.0.03
+Begain to change the method main.I find that I can not complete the exit function,becouse that it may need to change 'cin'.
+
+开始改写主方法。我发现我没法实现退出功能，因为似乎需要改写cin。
