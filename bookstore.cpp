@@ -15,7 +15,7 @@ int main(){
                   cout<<"ÇëÄúµÇÂ½"<<endl;
                   cout<<"ÕË»§£º";
                   cin>>userID;
-                  user u(userID);
+                  user tmp(userID);
                   cout<<"ÃÜÂë£º";
                   cin>>userkey;
             }
